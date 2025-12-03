@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment - Glam Yourself</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Glam Yourself</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+    </nav>
+</header>
+
+<div class="section">
+    <h2>Complete Your Payment</h2>
+
+    <p>Product: <strong id="prod"></strong></p>
+    <p>Amount: <strong id="amt"></strong></p>
+
+    <form style="max-width:400px;margin:auto;text-align:left;">
+        <label>Name on Card:</label>
+        <input type="text" style="width:100%;padding:10px;margin-bottom:10px;">
+
+        <label>Card Number:</label>
+        <input type="text" style="width:100%;padding:10px;margin-bottom:10px;">
+
+        <label>Expiry Date:</label>
+        <input type="month" style="width:100%;padding:10px;margin-bottom:10px;">
+
+        <label>CVV:</label>
+        <input type="text" style="width:100%;padding:10px;margin-bottom:20px;">
+
+        <button type="submit" style="width:100%;padding:12px;background:#111;color:#fff;">Pay Now</button>
+    </form>
+</div>
+
+<footer>© 2025 Glam Yourself</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("prod").innerText = params.get("name");
+document.getElementById("amt").innerText = "$" + params.get("price");
+</script>
+
+</body>
+</html>
